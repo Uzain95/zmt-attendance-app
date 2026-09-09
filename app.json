@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "ZMT Attendance",
+    "slug": "zmt-attendance",
+    "scheme": "zmt-attendance",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "ZMT uses your location in the background to automatically check you in and out when you enter or leave the office.",
+          "locationWhenInUsePermission": "ZMT uses your location to verify attendance and support manual fallback when automation needs confirmation.",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+      "expo-local-authentication",
+      "expo-sqlite",
+      "expo-font",
+      "expo-asset"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "location"
+        ]
+      },
+      "bundleIdentifier": "com.zmt.attendance"
+    },
+    "android": {
+      "package": "com.zmt.attendance",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "USE_BIOMETRIC"
+      ]
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
